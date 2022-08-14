@@ -1,0 +1,60 @@
+﻿@{ 
+    Layout = null;
+    string Culture = (string)ViewBag.culture;
+    string message = (string)ViewBag.message;
+    IEnumerable<Catalog> _model = (IEnumerable<Catalog>)ViewBag.model;
+    string img = (string)ViewBag.imgId;
+}
+<style>
+    .messageHeader {
+        height: 100px;
+        text-align: center;
+    }
+        .messageHeader div {
+            background-color: rgb(19,46,109);
+            height: 50px;
+            line-height: 50px;
+        }
+            .messageHeader div > a {
+                color: rgb(255,255,255);
+                padding:0 15px;
+            }
+                .messageHeader div > a:hover {
+                    color: lightgray;
+                }
+        .message{
+            min-height:400px;
+            padding:50px;
+        }
+    .messageFooter {
+        background-color: rgb(19,46,109);
+        height: 50px;
+        line-height: 50px;
+        padding: 0 50px;
+    }
+            .messageFooter > a {
+                color: rgb(255,255,255);
+            }
+        .messageFooter a:hover{
+            color:lightgray;
+        }
+</style>
+<div class="messageHeader">
+    <a href="https://www.alcantara.am"><img src="cid:@img" height="50"/></a>
+    <div>
+        @if (_model != null && _model.Count() > 0)
+        {
+            foreach (var c in _model)
+            {
+                <a href="https://www.alcantara.am/Home/Products/@c.Id">@(CultureData.GetDefoultName(c.CultureName, Culture, c.Name))</a>
+            }
+        }
+    </div>
+</div>
+<div class="message">
+    @Html.Raw(message);
+</div>
+<div class="messageFooter">
+    <a href="https://www.alcantara.am/Home/About">About Alcantara</a>
+    <a style="float: right; " href="https://www.alcantara.am/Home/Contact">Contact us</a>
+</div>

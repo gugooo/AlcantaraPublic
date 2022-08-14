@@ -1,0 +1,38 @@
+[
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/Products.min.css",
+    "inputFiles": [
+      "wwwroot/css/Products.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/Index.min.css",
+    "inputFiles": [
+      "wwwroot/css/Index.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/jquery-cookie/jquery.cookie.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery-cookie/jquery.cookie.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/microsoft-signalr/signalr.min.js",
+    "inputFiles": [
+      "wwwroot/lib/microsoft-signalr/signalr.js"
+    ]
+  }
+]

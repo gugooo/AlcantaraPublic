@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery-cookie@1.4.1",
+      "destination": "wwwroot/lib/jquery-cookie/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "wwwroot/js/",
+      "destination": "wwwroot/js/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "wwwroot/css/",
+      "destination": "wwwroot/css/css/"
+    },
+    {
+      "library": "jquery.form@4.2.2",
+      "destination": "wwwroot/lib/jquery.form/"
+    },
+    {
+      "library": "microsoft-signalr@5.0.0-preview.4.20257.10",
+      "destination": "wwwroot/lib/microsoft-signalr/"
+    }
+  ]
+}

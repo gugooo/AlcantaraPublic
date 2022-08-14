@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = (c.NativeName.First().ToString().ToUpper()+c.NativeName.Substring(1)) })
+        .ToList();
+}
+
+<form class="mr-auto pr-3" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@(Context.Request.Path + Context.Request.QueryString)" method="post">
+    <div class="input-group border BorderColor p-0 rounded col-auto">
+        <div class="input-group-prepend">
+            <img class="mt-1 mx-1" src="~/Icons/NavGlobe.png" height="30" />
+        </div>
+        <select class="form-control border-0 borderL BoxShadowNone font-weight-bold BtnHover" name="culture" onchange="this.form.submit();" 
+                asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
+        </select>
+    </div>
+</form>
